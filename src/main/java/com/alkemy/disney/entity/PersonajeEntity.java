@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "personajes")
@@ -19,8 +20,8 @@ public class PersonajeEntity {
     private Double peso;
     private String historia;
 
-    @ManyToMany
-    private PeliculaEntity pelicula;
+    @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
+    private List<PeliculaEntity> peliculas;
 
     @Column(name = "pelicula_id", nullable = false)
     private Long peliculaId;
