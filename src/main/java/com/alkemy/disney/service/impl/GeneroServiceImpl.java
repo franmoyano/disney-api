@@ -8,6 +8,8 @@ import com.alkemy.disney.service.GeneroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GeneroServiceImpl implements GeneroService {
 
@@ -22,4 +24,16 @@ public class GeneroServiceImpl implements GeneroService {
         GeneroDTO result = generoMapper.generoEntity2DTO(entitySaved);
         return result;
     }
+
+    public List<GeneroDTO> findAll() {
+        List<GeneroEntity> entities = generoRepository.findAll();
+        List<GeneroDTO> result = generoMapper.generoEntityList2DTOList(entities);
+        return result;
+    }
+
+    public void deleteById(Long id) {
+        generoRepository.deleteById(id);
+    }
+
+
 }

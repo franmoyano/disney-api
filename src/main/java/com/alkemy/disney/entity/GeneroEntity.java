@@ -2,6 +2,8 @@ package com.alkemy.disney.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,12 +12,15 @@ import java.util.List;
 @Table(name = "generos")
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE generos SET deleted = true WHERE id = ?")
+@Where(clause = "deleted = false")
 public class GeneroEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nombre;
     private String imagen;
+    private Boolean deleted = Boolean.FALSE;
     @ManyToMany
     @JoinTable(
             name = "pelicula_genero",
