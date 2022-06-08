@@ -1,7 +1,6 @@
 package com.alkemy.disney.controller;
 
 import com.alkemy.disney.dto.GeneroDTO;
-import com.alkemy.disney.entity.GeneroEntity;
 import com.alkemy.disney.service.GeneroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
