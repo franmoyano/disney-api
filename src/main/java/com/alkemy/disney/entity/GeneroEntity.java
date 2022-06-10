@@ -21,7 +21,7 @@ public class GeneroEntity {
     private String nombre;
     private String imagen;
     private Boolean deleted = Boolean.FALSE;
-    @ManyToMany
+    @OneToMany
     @JoinTable(
             name = "pelicula_genero",
             joinColumns = @JoinColumn(name = "genero_id"),

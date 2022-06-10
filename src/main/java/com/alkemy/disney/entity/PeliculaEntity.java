@@ -32,6 +32,6 @@ public class PeliculaEntity {
             inverseJoinColumns = @JoinColumn(name = "personaje_id")
     )
     private List<PersonajeEntity> personajes;
-    @ManyToMany(mappedBy = "peliculas", cascade = CascadeType.ALL)
-    private List<GeneroEntity> generos;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private GeneroEntity genero;
 }
