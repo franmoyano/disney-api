@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name = "personajes")
 @Getter
 @Setter
-public class PersonajeEntity {
+public class CharacterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -21,7 +21,7 @@ public class PersonajeEntity {
     private String historia;
 
     @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
-    private List<PeliculaEntity> peliculas;
+    private List<MovieEntity> peliculas;
 
     @Column(name = "pelicula_id", nullable = false)
     private Long peliculaId;

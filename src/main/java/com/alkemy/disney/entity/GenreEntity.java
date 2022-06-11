@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @SQLDelete(sql = "UPDATE generos SET deleted = true WHERE id = ?")
 @Where(clause = "deleted = false")
-public class GeneroEntity {
+public class GenreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -27,5 +27,5 @@ public class GeneroEntity {
             joinColumns = @JoinColumn(name = "genero_id"),
             inverseJoinColumns = @JoinColumn(name = "pelicula_id")
     )
-    private List<PeliculaEntity> peliculas;
+    private List<MovieEntity> peliculas;
 }

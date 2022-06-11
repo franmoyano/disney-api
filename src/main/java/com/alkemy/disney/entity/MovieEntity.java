@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "peliculas")
 @Getter
 @Setter
-public class PeliculaEntity {
+public class MovieEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -31,7 +31,7 @@ public class PeliculaEntity {
             joinColumns = @JoinColumn(name = "pelicula_id"),
             inverseJoinColumns = @JoinColumn(name = "personaje_id")
     )
-    private List<PersonajeEntity> personajes;
+    private List<CharacterEntity> personajes;
     @ManyToOne(cascade = CascadeType.ALL)
-    private GeneroEntity genero;
+    private GenreEntity genero;
 }
