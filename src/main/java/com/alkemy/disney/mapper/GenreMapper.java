@@ -13,16 +13,16 @@ public class GenreMapper {
     public GenreEntity generoDTO2Entity(GenreDTO dto) {
         GenreEntity genreEntity = new GenreEntity();
         genreEntity.setId(dto.getId());
-        genreEntity.setImagen(dto.getImagen());
-        genreEntity.setNombre(dto.getNombre());
+        genreEntity.setImage(dto.getImagen());
+        genreEntity.setName(dto.getNombre());
         return genreEntity;
     }
 
     public GenreDTO generoEntity2DTO(GenreEntity entity) {
         GenreDTO generoDTO = new GenreDTO();
         generoDTO.setId(entity.getId());
-        generoDTO.setImagen(entity.getImagen());
-        generoDTO.setNombre(entity.getNombre());
+        generoDTO.setImagen(entity.getImage());
+        generoDTO.setNombre(entity.getName());
         return generoDTO;
     }
 

@@ -9,23 +9,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "generos")
+@Table(name = "genres")
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE generos SET deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE genres SET deleted = true WHERE id = ?")
 @Where(clause = "deleted = false")
 public class GenreEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String imagen;
+    private String name;
+    private String image;
     private Boolean deleted = Boolean.FALSE;
+
     @OneToMany
     @JoinTable(
-            name = "pelicula_genero",
-            joinColumns = @JoinColumn(name = "genero_id"),
-            inverseJoinColumns = @JoinColumn(name = "pelicula_id")
+            name = "movie_genre",
+            joinColumns = @JoinColumn(name = "genre_id"),
+            inverseJoinColumns = @JoinColumn(name = "movie_id")
     )
-    private List<MovieEntity> peliculas;
+    private List<MovieEntity> movies;
 }
