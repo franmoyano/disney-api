@@ -8,9 +8,12 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GenreDTO {
+public class CharacterDTO {
     private Long id;
-    private String name;
     private String image;
+    private String name;
+    private Integer age;
+    private Double weight;
+    private String history;
     private List<MovieEntity> movies;
 }

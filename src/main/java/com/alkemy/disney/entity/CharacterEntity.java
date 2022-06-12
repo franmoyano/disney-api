@@ -27,9 +27,4 @@ public class CharacterEntity {
 
     @ManyToMany(mappedBy = "characters", cascade = CascadeType.ALL)
     private List<MovieEntity> movies;
-
-    @Column(name = "movie_id", nullable = false)
-    private Long movieId;
-
-
 }
